@@ -1281,6 +1281,10 @@
             <input class="form-input" type="email" id="contactEmail" placeholder="you@company.com" />
           </div>
           <div class="form-group">
+            <label class="form-label" for="contactPhone">Téléphone (Optionnel)</label>
+            <input class="form-input" type="tel" id="contactPhone" placeholder="06 12 34 56 78" />
+          </div>
+          <div class="form-group">
             <label class="form-label" for="contactMsg">Message</label>
             <textarea class="form-textarea" id="contactMsg" placeholder="Votre message..."></textarea>
           </div>
@@ -1530,10 +1534,12 @@
 
       const nameEl = document.getElementById('contactName');
       const emailEl = document.getElementById('contactEmail');
+      const phoneEl = document.getElementById('contactPhone');
       const msgEl = document.getElementById('contactMsg');
 
       const name = nameEl.value.trim();
       const email = emailEl.value.trim();
+      const phone = phoneEl.value.trim();
       const message = msgEl.value.trim();
 
       if (!name || !email || !message) {
@@ -1574,6 +1580,9 @@
         from_name: name,
         from_email: email,
         reply_to: email,
+        phone: phone,
+        phone_number: phone,
+        telephone: phone,
         message: message,
         to_email: 'oumarisid@gmail.com'
       };
@@ -1587,6 +1596,7 @@
 
           nameEl.value = '';
           emailEl.value = '';
+          phoneEl.value = '';
           msgEl.value = '';
 
           setTimeout(() => {
